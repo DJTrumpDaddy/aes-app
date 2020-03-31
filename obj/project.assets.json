@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/loganw/Desktop/AESImplementation/aes-app/aes-app.csproj",
+      "projectUniqueName": "/home/loganw/Projects/aes-app/aes-app.csproj",
       "projectName": "aes-app",
-      "projectPath": "/home/loganw/Desktop/AESImplementation/aes-app/aes-app.csproj",
+      "projectPath": "/home/loganw/Projects/aes-app/aes-app.csproj",
       "packagesPath": "/home/loganw/.nuget/packages/",
-      "outputPath": "/home/loganw/Desktop/AESImplementation/aes-app/obj/",
+      "outputPath": "/home/loganw/Projects/aes-app/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/loganw/.nuget/NuGet/NuGet.Config"

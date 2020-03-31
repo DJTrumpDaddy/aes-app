@@ -27,16 +27,47 @@ namespace aes_app
 		{
 			GenSBox();
 			GenKey();
+			Console.Write("Key: ");
+			foreach(uint k in key)
+			{
+				Console.Write(k.ToString("x8"));
+			}
+
 			KeyExpansion();
 
 			uint[] input = new uint[]{0x00112233,0x44556677,0x8899aabb,0xccddeeff};
 			uint[] output = new uint[4];
 
+			Console.Write("\nEncrypt IN: ");
+			foreach(uint i in input)
+			{
+				Console.Write(i.ToString("x8"));
+			}
+
 			AESEncrypt crypt = new AESEncrypt(w, Nb, Nr, Nk);
 			crypt.Cipher(input, ref output);
 
+			Console.Write("\nEncrypt OUT: ");
+			foreach(uint o in output)
+			{
+				Console.Write(o.ToString("x8"));
+			}
+
+			Console.Write("\nDecrypt IN: ");
+			foreach(uint o in output)
+			{
+				Console.Write(o.ToString("x8"));
+			}
+
 			AESDecrypt dcrypt = new AESDecrypt(w, Nb, Nr, Nk);
 			dcrypt.InvCipher(output, ref output);
+
+			Console.Write("\nDecrypt OUT: ");
+			foreach(uint o in output)
+			{
+				Console.Write(o.ToString("x8"));
+			}
+			Console.WriteLine();
     	}
 
 		static void GenKey()

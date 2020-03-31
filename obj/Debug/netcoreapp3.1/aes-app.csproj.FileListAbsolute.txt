@@ -9,3 +9,14 @@
 /home/loganw/Desktop/AESImplementation/aes-app/obj/Debug/netcoreapp3.1/aes-app.AssemblyInfo.cs
 /home/loganw/Desktop/AESImplementation/aes-app/obj/Debug/netcoreapp3.1/aes-app.dll
 /home/loganw/Desktop/AESImplementation/aes-app/obj/Debug/netcoreapp3.1/aes-app.pdb
+/home/loganw/Projects/aes-app/bin/Debug/netcoreapp3.1/aes-app
+/home/loganw/Projects/aes-app/bin/Debug/netcoreapp3.1/aes-app.deps.json
+/home/loganw/Projects/aes-app/bin/Debug/netcoreapp3.1/aes-app.runtimeconfig.json
+/home/loganw/Projects/aes-app/bin/Debug/netcoreapp3.1/aes-app.runtimeconfig.dev.json
+/home/loganw/Projects/aes-app/bin/Debug/netcoreapp3.1/aes-app.dll
+/home/loganw/Projects/aes-app/bin/Debug/netcoreapp3.1/aes-app.pdb
+/home/loganw/Projects/aes-app/obj/Debug/netcoreapp3.1/aes-app.csprojAssemblyReference.cache
+/home/loganw/Projects/aes-app/obj/Debug/netcoreapp3.1/aes-app.AssemblyInfoInputs.cache
+/home/loganw/Projects/aes-app/obj/Debug/netcoreapp3.1/aes-app.AssemblyInfo.cs
+/home/loganw/Projects/aes-app/obj/Debug/netcoreapp3.1/aes-app.dll
+/home/loganw/Projects/aes-app/obj/Debug/netcoreapp3.1/aes-app.pdb

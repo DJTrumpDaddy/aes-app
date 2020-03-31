@@ -25,33 +25,20 @@ namespace aes_app
 				InvSubBytes();
                 AddRoundKey(round);
 				InvMixColumns();
-				Console.WriteLine();
-				foreach(uint s in state)
-				{
-					Console.Write(Convert.ToString(s, 16));
-				}
 			}
 
             InvShiftRows();
 			InvSubBytes();
 			AddRoundKey(0);
 
-			Console.WriteLine();
-			foreach(uint s in state)
-			{
-				Console.Write(Convert.ToString(s, 16));
-			}
-
 			output = state;
 		}
 
 		private void AddRoundKey(uint round)
 		{
-			Console.WriteLine($"\nRound {round}");
 			for(int c = 0; c < 4; c++)
 			{
 				state[c] ^= w[(round * Nb) + c];
-				Console.Write(Convert.ToString(w[(round * Nb) + c],16));
 			}
 		}
 
