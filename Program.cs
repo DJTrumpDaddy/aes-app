@@ -26,7 +26,13 @@ namespace aes_app
     	static void Main(string[] args)
 		{
 			GenSBox();
-			GenKey();
+
+			Console.WriteLine("----- PAIR 1 -----");
+			key = new uint[] {(0x00 << 24) | (0x01 << 16) | (0x02 << 8) | 0x03,
+								(0x04 << 24) | (0x05 << 16) | (0x06 << 8) | 0x07,
+								(0x08 << 24) | (0x09 << 16) | (0x0a << 8) | 0x0b,
+								(0x0c << 24) | (0x0d << 16) | (0x0e << 8) | 0x0f};
+
 			Console.Write("Key: ");
 			foreach(uint k in key)
 			{
@@ -67,21 +73,55 @@ namespace aes_app
 			{
 				Console.Write(o.ToString("x8"));
 			}
-			Console.WriteLine();
-    	}
+			Console.WriteLine("\n");
 
-		static void GenKey()
-		{
-			/*key = new uint[] {(0x30 << 24) | (0x31 << 16) | (0x32 << 8) | 0x33,
+			Console.WriteLine("----- PAIR 2 -----");
+			key = new uint[] {	(0x30 << 24) | (0x31 << 16) | (0x32 << 8) | 0x33,
 								(0x34 << 24) | (0x35 << 16) | (0x36 << 8) | 0x37,
 								(0x38 << 24) | (0x39 << 16) | (0x3a << 8) | 0x3b,
 								(0x3c << 24) | (0x3d << 16) | (0x3e << 8) | 0x3f};
-								*/
-			key = new uint[] {(0x00 << 24) | (0x01 << 16) | (0x02 << 8) | 0x03,
-								(0x04 << 24) | (0x05 << 16) | (0x06 << 8) | 0x07,
-								(0x08 << 24) | (0x09 << 16) | (0x0a << 8) | 0x0b,
-								(0x0c << 24) | (0x0d << 16) | (0x0e << 8) | 0x0f};
-		}
+
+			Console.Write("Key: ");
+			foreach(uint k in key)
+			{
+				Console.Write(k.ToString("x8"));
+			}
+
+			KeyExpansion();
+
+			input = new uint[]{0xf4351503,0xaa781c52,0x0267d690,0xc42d1f43};
+
+			Console.Write("\nEncrypt IN: ");
+			foreach(uint i in input)
+			{
+				Console.Write(i.ToString("x8"));
+			}
+
+			crypt = new AESEncrypt(w, Nb, Nr, Nk);
+			crypt.Cipher(input, ref output);
+
+			Console.Write("\nEncrypt OUT: ");
+			foreach(uint o in output)
+			{
+				Console.Write(o.ToString("x8"));
+			}
+
+			Console.Write("\nDecrypt IN: ");
+			foreach(uint o in output)
+			{
+				Console.Write(o.ToString("x8"));
+			}
+
+			dcrypt = new AESDecrypt(w, Nb, Nr, Nk);
+			dcrypt.InvCipher(output, ref output);
+
+			Console.Write("\nDecrypt OUT: ");
+			foreach(uint o in output)
+			{
+				Console.Write(o.ToString("x8"));
+			}
+			Console.WriteLine();
+    	}
 
 		static void KeyExpansion()
 		{
